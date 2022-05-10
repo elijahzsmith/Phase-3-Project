@@ -1,12 +1,16 @@
 import React from "react";
 import MenuItem from "../components/MenuItem";
 
-function Menu() {
+function Menu({ menuItems }) {
+  const renderMenuItems = menuItems.map((menuItem) => {
+    console.log(menuItem);
+    return <MenuItem key={menuItem.id} menuItem={menuItem} />;
+  });
+
   return (
     <div>
       <h1>Menu</h1>
-      {/* eventually we'll want to map to dynamically add items from database */}
-      <MenuItem />
+      {renderMenuItems}
     </div>
   );
 }

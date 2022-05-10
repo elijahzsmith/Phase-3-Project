@@ -3,11 +3,15 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav>
+    <nav className="nav-bar">
       <NavLink exact to="/">
-        <img src="#" alt="logo" className="logo"></img>
+        <img
+          src="https://pbs.twimg.com/profile_images/80388980/logo_400x400.png"
+          alt="logo"
+          className="logo"
+        ></img>
       </NavLink>
-      <ul>
+      <ul className="nav-links">
         <NavLink exact to="/orders">
           <li>Orders</li>
         </NavLink>
