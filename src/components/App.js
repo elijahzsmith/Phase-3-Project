@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import About from "../pages/About";
 import Orders from "../pages/Orders";
 import Menu from "../pages/Menu";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <About />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

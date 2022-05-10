@@ -4,7 +4,7 @@ import MenuItem from "../components/MenuItem";
 function Menu() {
   return (
     <div>
-      Menu
+      <h1>Menu</h1>
       {/* eventually we'll want to map to dynamically add items from database */}
       <MenuItem />
     </div>
