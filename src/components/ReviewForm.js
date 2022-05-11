@@ -1,12 +1,46 @@
 import React, { useState } from "react";
 
-function ReviewForm() {
+function ReviewForm({
+  // starInput,
+  // setStarInput,
+  // reviewInput,
+  // setReviewInput,
+  // handleSubmit,
+  reviews,
+  setReviews,
+}) {
   const [starInput, setStarInput] = useState("");
   const [reviewInput, setReviewInput] = useState("");
 
-  console.log(starInput, reviewInput);
+  const newReview = {
+    review_details: reviewInput,
+    star_rating: starInput,
+  };
+
+  const configObjPOST = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(newReview),
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch(`http://localhost:9292/reviews`, configObjPOST)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setReviews([...reviews, data]);
+        setStarInput("");
+        setReviewInput("");
+      });
+  };
+
+  //console.log(starInput, reviewInput);
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmit(e)}>
       Leave a review!
       <input
         type="integer"
@@ -20,7 +54,7 @@ function ReviewForm() {
         placeholder="Review..."
         onChange={(e) => setReviewInput(e.target.value)}
       />
-      <button>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </form>
   );
 }
