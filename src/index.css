@@ -95,3 +95,9 @@ form {
   align-items: center;
   border: 1px solid black;
 }
+
+.title-photo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}

@@ -18,11 +18,11 @@ function NavBar() {
         <NavLink exact to="/">
           <li>Home</li>
         </NavLink>
-        <NavLink exact to="/orders">
-          <li>Orders</li>
-        </NavLink>
         <NavLink exact to="/menu">
           <li>Menu</li>
+        </NavLink>
+        <NavLink exact to="/orders">
+          <li>Orders</li>
         </NavLink>
         <NavLink exact to="/about">
           <li>About</li>
