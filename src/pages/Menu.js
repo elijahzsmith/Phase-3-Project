@@ -16,7 +16,7 @@ function Menu({
   // const renderMenuItems = afterSearch.map((menuItem) => {
   // this way let's you filter with drop down but cant do both at once
   const renderMenuItems = afterSelection.map((menuItem) => {
-    console.log(menuItem);
+    //console.log(menuItem);
     return (
       <MenuItem
         key={menuItem.id}
