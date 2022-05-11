@@ -27,6 +27,13 @@ nav {
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .logo {
@@ -41,4 +48,50 @@ form {
   margin-left: auto;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.menu-item-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.food-pic {
+  max-width: 250px;
+}
+
+.order-container {
+  position: relative;
+  margin: auto;
+  max-width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.price-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
 }

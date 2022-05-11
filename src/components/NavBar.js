@@ -5,13 +5,19 @@ function NavBar() {
   return (
     <nav className="nav-bar">
       <NavLink exact to="/">
-        <img
-          src="https://pbs.twimg.com/profile_images/80388980/logo_400x400.png"
-          alt="logo"
-          className="logo"
-        ></img>
+        <span className="logo-container">
+          <img
+            src="https://pbs.twimg.com/profile_images/80388980/logo_400x400.png"
+            alt="logo"
+            className="logo"
+          ></img>
+          <h1>Sinatra's Finest!</h1>
+        </span>
       </NavLink>
       <ul className="nav-links">
+        <NavLink exact to="/">
+          <li>Home</li>
+        </NavLink>
         <NavLink exact to="/orders">
           <li>Orders</li>
         </NavLink>

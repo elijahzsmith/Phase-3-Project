@@ -17,12 +17,14 @@ function App() {
       .then((data) => {
         console.log(data);
       });
+
     fetch("http://localhost:9292/menu_items")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setMenuItems(data);
       });
+
     fetch("http://localhost:9292/customers")
       .then((res) => res.json())
       .then((data) => {
