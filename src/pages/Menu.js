@@ -10,10 +10,12 @@ function Menu({
   afterSelection,
   currSelection,
   setCurrSelection,
+  inOrders,
+  setInOrders,
 }) {
-  const renderMenuItems = afterSearch.map((menuItem) => {
-    // this way let's you filter with drop down but cant do both at once
-    // const renderMenuItems = afterSelection.map((menuItem) => {
+  // const renderMenuItems = afterSearch.map((menuItem) => {
+  // this way let's you filter with drop down but cant do both at once
+  const renderMenuItems = afterSelection.map((menuItem) => {
     console.log(menuItem);
     return (
       <MenuItem
@@ -22,6 +24,8 @@ function Menu({
         afterSelection={afterSelection}
         currSelection={currSelection}
         setCurrSelection={setCurrSelection}
+        inOrders={inOrders}
+        setInOrders={setInOrders}
       />
     );
   });

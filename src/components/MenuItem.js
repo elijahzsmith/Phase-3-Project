@@ -1,11 +1,12 @@
 import React from "react";
 
-function MenuItem({ menuItem }) {
+function MenuItem({ menuItem, inOrders, setInOrders }) {
   const { id, course, name, image_url, ingredients, price } = menuItem;
 
   const tax = 0.3;
 
   const newOrderItem = {
+    name,
     price,
   };
 
@@ -15,15 +16,16 @@ function MenuItem({ menuItem }) {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify(),
+    body: JSON.stringify(newOrderItem),
   };
 
-  const handleClick = (e) => {
-    console.log(e.target);
-    fetch(`http://localhost:9292/${e.target.id}`)
+  const handleClick = (menuItem) => {
+    console.log("Added to Orders!", menuItem);
+    fetch(`http://localhost:9292/orders`, configObjPOST)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setInOrders([...inOrders, data]);
       });
   };
   return (
@@ -37,7 +39,7 @@ function MenuItem({ menuItem }) {
         <h2>{course}</h2>
         <h2>{ingredients}</h2>
         <h2>Price: ${price}</h2>
-        <button onClick={(e) => handleClick(e)}>Add to order</button>
+        <button onClick={() => handleClick(menuItem)}>Add to order</button>
       </div>
     </div>
   );

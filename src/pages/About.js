@@ -1,4 +1,5 @@
 import React from "react";
+import ReviewForm from "../components/ReviewForm";
 import ReviewItem from "../components/ReviewItem";
 
 function About({ reviews }) {
@@ -11,14 +12,7 @@ function About({ reviews }) {
       About
       <h1>Sinatra's Finest</h1>
       <h4>Include a paragraph about sinatra's finest for content</h4>
-      <form>
-        Leave a review!
-        <input type="text" placeholder="Location..." />
-        <input type="text" placeholder="Location..." />
-        <input type="text" placeholder="Location..." />
-        <input type="textarea" placeholder="Location..." />
-        <button>Submit</button>
-      </form>
+      <ReviewForm />
       <div className="reviews-container">
         <h2>Reviews</h2>
         {renderReviews}

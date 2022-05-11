@@ -1,6 +1,8 @@
 import React from "react";
 
-function Search({ currSearch, setCurrSearch }) {
+function Search({ currSearch, setCurrSearch, afterSelection,
+  currSelection,
+  setCurrSelection }) {
   return (
     <div>
       {/* Make controlled form */}

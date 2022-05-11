@@ -13,6 +13,7 @@ function App() {
   const [reviews, setReviews] = useState([]);
   const [currSearch, setCurrSearch] = useState("");
   const [currSelection, setCurrSelection] = useState("Choose your cuisine");
+  const [inOrders, setInOrders] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:9292/reviews")
@@ -34,6 +35,12 @@ function App() {
       .then((data) => {
         console.log(data);
       });
+    fetch("http://localhost:9292/orders")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setInOrders(data);
+      });
   }, []);
 
   const afterSearch = menuItems.filter((item) => {
@@ -46,7 +53,7 @@ function App() {
     }
   });
 
-  const afterSelection = menuItems.filter((item) => {
+  const afterSelection = afterSearch.filter((item) => {
     if (currSelection === "Choose your cuisine") {
       return item;
     } else if (
@@ -66,7 +73,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path="/orders">
-          <Orders />
+          <Orders inOrders={inOrders} setInOrders={setInOrders} />
         </Route>
         <Route exact path="/menu">
           <Menu
@@ -77,6 +84,8 @@ function App() {
             afterSelection={afterSelection}
             currSelection={currSelection}
             setCurrSelection={setCurrSelection}
+            inOrders={inOrders}
+            setInOrders={setInOrders}
           />
         </Route>
         <Route exact path="/about">
