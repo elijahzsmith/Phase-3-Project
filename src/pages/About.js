@@ -1,6 +1,11 @@
 import React from "react";
+import ReviewItem from "../components/ReviewItem";
 
-function About() {
+function About({ reviews }) {
+  const renderReviews = reviews.map((review) => {
+    console.log(review);
+    return <ReviewItem key={review.id} review={review} />;
+  });
   return (
     <div>
       About
@@ -12,7 +17,12 @@ function About() {
         <input type="text" placeholder="Location..." />
         <input type="text" placeholder="Location..." />
         <input type="textarea" placeholder="Location..." />
+        <button>Submit</button>
       </form>
+      <div className="reviews-container">
+        <h2>Reviews</h2>
+        {renderReviews}
+      </div>
     </div>
   );
 }

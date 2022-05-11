@@ -10,12 +10,16 @@ import Footer from "./Footer";
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
+  const [reviews, setReviews] = useState([]);
+  const [currSearch, setCurrSearch] = useState("");
+  const [currSelection, setCurrSelection] = useState("Choose your cuisine");
 
   useEffect(() => {
     fetch("http://localhost:9292/reviews")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setReviews(data);
       });
 
     fetch("http://localhost:9292/menu_items")
@@ -32,6 +36,28 @@ function App() {
       });
   }, []);
 
+  const afterSearch = menuItems.filter((item) => {
+    if (currSearch === "") {
+      return item;
+    } else if (item.name.toLowerCase().includes(currSearch.toLowerCase())) {
+      return item;
+    } else {
+      return null;
+    }
+  });
+
+  const afterSelection = menuItems.filter((item) => {
+    if (currSelection === "Choose your cuisine") {
+      return item;
+    } else if (
+      item.course.toLowerCase().includes(currSelection.toLowerCase())
+    ) {
+      return item;
+    } else {
+      return null;
+    }
+  });
+
   return (
     <div className="App">
       <NavBar />
@@ -43,10 +69,18 @@ function App() {
           <Orders />
         </Route>
         <Route exact path="/menu">
-          <Menu menuItems={menuItems} />
+          <Menu
+            menuItems={menuItems}
+            afterSearch={afterSearch}
+            currSearch={currSearch}
+            setCurrSearch={setCurrSearch}
+            afterSelection={afterSelection}
+            currSelection={currSelection}
+            setCurrSelection={setCurrSelection}
+          />
         </Route>
         <Route exact path="/about">
-          <About />
+          <About reviews={reviews} />
         </Route>
       </Switch>
       <Footer />
