@@ -19,26 +19,24 @@ function App() {
     fetch("http://localhost:9292/reviews")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setReviews(data);
       });
 
     fetch("http://localhost:9292/menu_items")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMenuItems(data);
       });
 
     fetch("http://localhost:9292/customers")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log("customers", data);
       });
+
     fetch("http://localhost:9292/orders")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setInOrders(data);
       });
   }, []);

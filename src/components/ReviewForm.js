@@ -13,8 +13,8 @@ function ReviewForm({
   const [reviewInput, setReviewInput] = useState("");
 
   const newReview = {
-    review_details: reviewInput,
-    star_rating: starInput,
+    review_details: starInput,
+    star_rating: reviewInput,
   };
 
   const configObjPOST = {
