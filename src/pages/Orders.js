@@ -12,13 +12,27 @@ function Orders({ inOrders, setInOrders }) {
 
   return (
     <div>
-      <h1>Orders Page</h1>
-      {renderOrderItems}
-      <h6>tax: $</h6>
-      <h6>total: $</h6>
-      <Button variant="contained" size="small">
-        Checkout
-      </Button>
+      <div className='order'>
+        <div className='orderLeft'>
+          <div className='restaurantInfo'>Sinatra's</div>
+          <div className='menuOrderItems'>
+this is where menu items go
+          </div>
+        </div>
+        <div className='orderRight'>
+          Your Order
+          <div className='menuOrderItems'>
+this is where order items go
+          </div>
+        </div>
+        {/* <h1>Orders Page</h1> */}
+        {/* {renderOrderItems} */}
+        {/* <h6>tax: $</h6> */}
+        {/* <h6>total: $</h6> */}
+        {/* <Button variant="contained" size="small"> */}
+        {/* Checkout */}
+        {/* </Button> */}
+      </div>
     </div>
   );
 }
