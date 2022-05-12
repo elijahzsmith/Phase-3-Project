@@ -89,7 +89,7 @@ function App() {
           />
         </Route>
         <Route exact path="/about">
-          <About reviews={reviews} />
+          <About reviews={reviews} setReviews={setReviews} />
         </Route>
       </Switch>
       <Footer />
