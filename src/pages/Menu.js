@@ -42,10 +42,9 @@ function Menu({
   // });
   const menuChoices = [
     "main menu",
-    "breakfast",
     "lunch",
-    "dinner",
     "appetizer",
+    "dinner",
     "dessert",
     "drinks",
   ];

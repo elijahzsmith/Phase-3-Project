@@ -4,6 +4,8 @@ import Button from "@mui/material/Button";
 
 function Orders({ inOrders, setInOrders, renderMenuItemsOrderPage }) {
   console.log(renderMenuItemsOrderPage);
+function Orders({ inOrders, setInOrders, renderMenuItems }) {
+  // console.log(renderMenuItems);
   const renderOrderItems = inOrders.map((order) => {
     console.log(order);
     return (
