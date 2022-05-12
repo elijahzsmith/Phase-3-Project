@@ -6,6 +6,7 @@ function ReviewItem({ review }) {
     <div>
       <h3>{review_details}</h3>
       <h3>{star_rating}</h3>
+      <button>edit</button>
     </div>
   );
 }
