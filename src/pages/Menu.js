@@ -41,7 +41,7 @@ function Menu({
       />
     );
   });
-  const menuChoices = ["main menu", "breakfast", "lunch", "dinner", "appetizer", "dessert", "drinks"]
+  const menuChoices = ["main menu", "lunch", "appetizer", "dinner", "dessert", "drinks"]
   const menuButtonCreator = menuChoices.map((choice) =>
     <button
       onClick={() => menuChoiceModal(choice)}

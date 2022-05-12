@@ -45,6 +45,7 @@ nav {
   color: pink;
   position: absolute;
   bottom: 100px;
+  font-weight: bold;
 
 }
 
@@ -211,4 +212,53 @@ form {
 }
 .menuOrderItems {
   font-size: large;
+}
+.homeBox {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 800px; 
+  display: flex;
+  border: 3px solid pink;
+}
+.homeBoxLeft {
+  height: 550px;
+  width: 40%;
+  background-color: black;
+}
+.homeBoxLeftPt1 {
+  border-bottom: 3px solid pink;
+  flex-direction: column;
+  height: 45%;
+  color: pink;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20px;
+}
+.homeBoxLeftPt2 {
+  flex-direction: column;
+  height: 50%;
+  color: pink;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20px;
+}
+.homeBoxRight {
+  width: 60%;
+  height: 550px;
+  background-image: url("HomePagePic.jpeg");
+  border-left: 3px solid pink;
+}
+.homeHours1 {
+  padding-top: 20px;
+}
+.homeAddress1 {
+  padding-top: 20px;
+}
+.homeRestaurantName {
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
 }
