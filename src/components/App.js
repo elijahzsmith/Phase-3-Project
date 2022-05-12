@@ -106,7 +106,11 @@ function App() {
           <Home renderHomeMenuItems={renderHomeMenuItems} />
         </Route>
         <Route exact path="/orders">
-          <Orders inOrders={inOrders} setInOrders={setInOrders} />
+          <Orders
+            renderMenuItems={renderMenuItems}
+            inOrders={inOrders}
+            setInOrders={setInOrders}
+          />
         </Route>
         <Route exact path="/menu">
           <Menu
