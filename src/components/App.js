@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import About from "../pages/About";
 import Orders from "../pages/Orders";
 import Menu from "../pages/Menu";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
@@ -92,7 +92,7 @@ function App() {
           <About reviews={reviews} />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

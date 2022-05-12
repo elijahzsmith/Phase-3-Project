@@ -30,8 +30,7 @@ function MenuItem({ menuItem, inOrders, setInOrders }) {
   };
   return (
     <div>
-      <div className="menu-item-card">
-        MenuItem
+      <div className="menu-item-card">      
         <div className="title-photo">
           <img src={image_url} alt="food-pic" className="food-pic"></img>
           <h1>{name}</h1>
