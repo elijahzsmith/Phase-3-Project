@@ -6,13 +6,15 @@ import NavBar from "./NavBar";
 import About from "../pages/About";
 import Orders from "../pages/Orders";
 import Menu from "../pages/Menu";
+import MenuItem from "./MenuItem";
+import HomeMenuItem from "./HomeMenuItem";
 // import Footer from "./Footer";
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [currSearch, setCurrSearch] = useState("");
-  const [currSelection, setCurrSelection] = useState("Choose your cuisine");
+  const [currSelection, setCurrSelection] = useState("main menu");
   const [inOrders, setInOrders] = useState([]);
 
   useEffect(() => {
@@ -63,15 +65,52 @@ function App() {
     }
   });
 
+  const renderMenuItems = afterSelection.map((menuItem) => {
+    //console.log(menuItem);
+
+    return (
+      <MenuItem
+        key={menuItem.id}
+        menuItem={menuItem}
+        afterSelection={afterSelection}
+        currSelection={currSelection}
+        setCurrSelection={setCurrSelection}
+        inOrders={inOrders}
+        setInOrders={setInOrders}
+      />
+    );
+  });
+  const renderHomeMenuItems = menuItems.map((menuItem) => {
+    //console.log(menuItem);
+
+    return (
+      <HomeMenuItem
+        key={menuItem.id}
+        menuItem={menuItem}
+        afterSelection={afterSelection}
+        currSelection={currSelection}
+        setCurrSelection={setCurrSelection}
+        inOrders={inOrders}
+        setInOrders={setInOrders}
+      />
+    );
+  });
+
   return (
     <div className="App">
-      <NavBar />
+      <div>
+        <NavBar />
+      </div>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home renderHomeMenuItems={renderHomeMenuItems} />
         </Route>
         <Route exact path="/orders">
-          <Orders inOrders={inOrders} setInOrders={setInOrders} />
+          <Orders
+            renderMenuItems={renderMenuItems}
+            inOrders={inOrders}
+            setInOrders={setInOrders}
+          />
         </Route>
         <Route exact path="/menu">
           <Menu
@@ -84,6 +123,7 @@ function App() {
             setCurrSelection={setCurrSelection}
             inOrders={inOrders}
             setInOrders={setInOrders}
+            renderMenuItems={renderMenuItems}
           />
         </Route>
         <Route exact path="/about">
