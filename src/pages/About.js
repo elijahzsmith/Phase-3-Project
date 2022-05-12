@@ -6,8 +6,14 @@ function About({ reviews, setReviews }) {
   const [starInput, setStarInput] = useState("");
   const [reviewInput, setReviewInput] = useState("");
   const renderReviews = reviews.map((review) => {
-    console.log(review);
-    return <ReviewItem key={review.id} review={review} />;
+    return (
+      <ReviewItem
+        key={review.id}
+        review={review}
+        reviewInput={reviewInput}
+        starInput={starInput}
+      />
+    );
   });
 
   // const newReview = {
