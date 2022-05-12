@@ -2,8 +2,8 @@ import React from "react";
 import OrderItem from "../components/OrderItem";
 import Button from "@mui/material/Button";
 
-function Orders({ inOrders, setInOrders, renderMenuItems }) {
-  console.log(renderMenuItems);
+function Orders({ inOrders, setInOrders, renderMenuItemsOrderPage }) {
+  console.log(renderMenuItemsOrderPage);
   const renderOrderItems = inOrders.map((order) => {
     console.log(order);
     return (
@@ -23,7 +23,7 @@ function Orders({ inOrders, setInOrders, renderMenuItems }) {
           <div className="restaurantInfo">Sinatra's</div>
           <div className="menuOrderItems">
             this is where menu items go
-            {renderMenuItems}
+            {renderMenuItemsOrderPage}
           </div>
         </div>
         <div className="orderRight">
