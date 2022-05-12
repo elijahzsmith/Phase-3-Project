@@ -117,7 +117,6 @@ function Menu({
       >
         {/* Not cuisine but I cant think of the word */}
         <option value="choose">Choose your cuisine</option>
-        <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
         <option value="dinner">Dinner</option>
         <option value="appetizer">Appetizer</option>
