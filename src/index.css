@@ -197,3 +197,32 @@ form {
   border: 1px solid black;
   font-size: xx-large;
 }
+.order {
+  display: flex;
+  flex-direction: row;
+  min-height: 1000px;
+}
+.orderLeft {
+  /* background-color: white; */
+  /* height: ; */
+  width: 70%;
+  padding-left: 250px;
+  margin-top: 50px;
+  font-size: xx-large;
+
+  /* margin-right: auto; */
+}
+.orderRight {
+  border: 2px solid #f78da7;
+  width: 30%;
+  padding-top: 50px;
+  padding-left: 25px;
+  font-size: xx-large;
+  /* height: 100%; */
+}
+.restaurantInfo {
+  font-weight: bold;
+}
+.menuOrderItems {
+  font-size: large;
+}
