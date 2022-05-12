@@ -2,8 +2,20 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 
-function OrderItem({ order }) {
+function OrderItem({ order, inOrders, setInOrders }) {
   const { name, price } = order;
+
+  const handleDelete = (order) => {
+    console.log("Deleted order: ", order);
+    fetch(`http://localhost:9292/orders/${order.id}`, { method: "DELETE" })
+      .then((res) => res.json())
+      .then((deletedOrder) => {
+        const afterDelete = inOrders.filter((item) => {
+          return item.id !== deletedOrder.id;
+        });
+        setInOrders(afterDelete);
+      });
+  };
 
   return (
     <div>
@@ -24,7 +36,7 @@ function OrderItem({ order }) {
             <Button
               variant="contained"
               size="small"
-              onClick={(e) => console.log(e.target.value)}
+              onClick={() => handleDelete(order)}
             >
               Remove
             </Button>
