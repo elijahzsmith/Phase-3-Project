@@ -16,7 +16,6 @@ function NavBar() {
       </NavLink>
       <ul className="nav-links">
         <NavLink exact to="/">
-          <li>Home</li>
         </NavLink>
         <NavLink exact to="/menu">
           <li className="nav-name">MENU</li>
