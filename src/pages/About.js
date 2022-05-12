@@ -7,7 +7,7 @@ function About({ reviews, setReviews }) {
   const [reviewInput, setReviewInput] = useState("");
   const renderReviews = reviews.map((review) => {
     console.log(review);
-    return <ReviewItem key={review.id} review={review} />;
+    return <ReviewItem reviews={reviews} setReviews={setReviews} key={review.id} review={review} />;
   });
 
   // const newReview = {

@@ -29,7 +29,7 @@ function MenuItem({ menuItem, inOrders, setInOrders }) {
     fetch(`http://localhost:9292/orders`, configObjPOST)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setInOrders([...inOrders, data]);
       });
   };
