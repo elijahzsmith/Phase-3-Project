@@ -66,8 +66,19 @@ function App() {
   });
 
   const renderMenuItems = afterSelection.map((menuItem) => {
-    //console.log(menuItem);
-
+    return (
+      <MenuItem
+        key={menuItem.id}
+        menuItem={menuItem}
+        afterSelection={afterSelection}
+        currSelection={currSelection}
+        setCurrSelection={setCurrSelection}
+        inOrders={inOrders}
+        setInOrders={setInOrders}
+      />
+    );
+  });
+  const renderMenuItemsOrderPage = menuItems.map((menuItem) => {
     return (
       <MenuItem
         key={menuItem.id}
@@ -107,7 +118,7 @@ function App() {
         </Route>
         <Route exact path="/orders">
           <Orders
-            renderMenuItems={renderMenuItems}
+            renderMenuItemsOrderPage={renderMenuItemsOrderPage}
             inOrders={inOrders}
             setInOrders={setInOrders}
           />
