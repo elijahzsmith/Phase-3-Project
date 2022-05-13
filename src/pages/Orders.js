@@ -40,6 +40,8 @@ function Orders({
               <option value="lunch">Lunch</option>
               <option value="dinner">Dinner</option>
               <option value="appetizer">Appetizer</option>
+              <option value="dessert">Dessert</option>
+              <option value="drink">Drinks</option>
             </select>
             {renderMenuItemsOrderPage}
           </div>
