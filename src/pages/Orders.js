@@ -3,6 +3,7 @@ import OrderItem from "../components/OrderItem";
 import Button from "@mui/material/Button";
 import Search from "../components/Search";
 
+
 function Orders({
   inOrders,
   setInOrders,
@@ -12,6 +13,9 @@ function Orders({
   currSearch,
   setCurrSearch,
 }) {
+
+function Orders({ inOrders, setInOrders, renderMenuItemsOrderPage }) {
+
   const renderOrderItems = inOrders.map((order) => {
     console.log(order);
     return (
@@ -50,13 +54,6 @@ function Orders({
           Your Order
           <div className="menuOrderItems">{renderOrderItems}</div>
         </div>
-        {/* <h1>Orders Page</h1> */}
-        {/* {renderOrderItems} */}
-        {/* <h6>tax: $</h6> */}
-        {/* <h6>total: $</h6> */}
-        {/* <Button variant="contained" size="small"> */}
-        {/* Checkout */}
-        {/* </Button> */}
       </div>
     </div>
   );
