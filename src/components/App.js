@@ -28,6 +28,7 @@ function App() {
     fetch("http://localhost:9292/menu_items")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setMenuItems(data);
         setMenuItemsInOrder(data);
       });

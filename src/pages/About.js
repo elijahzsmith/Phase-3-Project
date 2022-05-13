@@ -47,6 +47,8 @@ function About({ reviews, setReviews }) {
           return review.id !== data.id ? review : data;
         });
         setReviews(afterEdit);
+        setReviewEditInput("");
+        setStarEditInput("");
       });
   };
 

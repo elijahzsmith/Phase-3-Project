@@ -22,11 +22,7 @@ function Menu({
 }) {
   const [menuState, setMenuState] = useState("main menu");
   const [open, setOpen] = React.useState(false);
-  const menuChoices = [
-    "lunch",
-    "appetizer",
-    "dinner",
-  ];
+  const menuChoices = ["lunch", "appetizer", "dinner", "dessert", "drink"];
   const menuButtonCreator = menuChoices.map((choice) => (
     <button
       onClick={() => menuChoiceModal(choice)}
@@ -63,12 +59,19 @@ function Menu({
     const handleClose = () => {
       setOpen(false);
     };
-    const filteredMenu = menuItems.length > 0 ? menuItems.filter((x) => menuState === x.course.toLowerCase()).map((y) =>
-      <div>
-        <h2>{y.name} {y.price}</h2>
-        <h3>{y.ingredients}</h3>
-        </div>
-    ) : null;
+    const filteredMenu =
+      menuItems.length > 0
+        ? menuItems
+            .filter((x) => menuState === x.course.toLowerCase())
+            .map((y) => (
+              <div>
+                <h2>
+                  {y.name} {y.price}
+                </h2>
+                <h3>{y.ingredients}</h3>
+              </div>
+            ))
+        : null;
     return (
       <div>
         <Dialog
