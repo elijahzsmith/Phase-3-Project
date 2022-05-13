@@ -27,7 +27,7 @@ function OrderItem({ order, inOrders, setInOrders }) {
         <div className="checkout-container">
           <div className="price-details">
             {/* Make dynamic */}
-            <h4>Price: ${price}</h4>
+            <h4>${price}</h4>
             {/* <h6>tax: $</h6>
             <h6>total: $</h6> */}
           </div>
