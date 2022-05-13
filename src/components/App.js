@@ -14,8 +14,9 @@ function App() {
   const [menuItems, setMenuItems] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [currSearch, setCurrSearch] = useState("");
-  const [currSelection, setCurrSelection] = useState("main menu");
+  const [currSelection, setCurrSelection] = useState("Choose your cuisine");
   const [inOrders, setInOrders] = useState([]);
+  const [menuItemsInOrder, setMenuItemsInOrder] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:9292/reviews")
@@ -28,6 +29,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setMenuItems(data);
+        setMenuItemsInOrder(data);
       });
 
     fetch("http://localhost:9292/customers")
@@ -52,8 +54,28 @@ function App() {
       return null;
     }
   });
+  const afterSearch2 = menuItemsInOrder.filter((item) => {
+    if (currSearch === "") {
+      return item;
+    } else if (item.name.toLowerCase().includes(currSearch.toLowerCase())) {
+      return item;
+    } else {
+      return null;
+    }
+  });
 
   const afterSelection = afterSearch.filter((item) => {
+    if (currSelection === "Choose your cuisine") {
+      return item;
+    } else if (
+      item.course.toLowerCase().includes(currSelection.toLowerCase())
+    ) {
+      return item;
+    } else {
+      return null;
+    }
+  });
+  const afterSelection2 = afterSearch2.filter((item) => {
     if (currSelection === "Choose your cuisine") {
       return item;
     } else if (
@@ -78,7 +100,7 @@ function App() {
       />
     );
   });
-  const renderMenuItemsOrderPage = menuItems.map((menuItem) => {
+  const renderMenuItemsOrderPage = afterSelection2.map((menuItem) => {
     return (
       <MenuItem
         key={menuItem.id}
@@ -121,6 +143,10 @@ function App() {
             renderMenuItemsOrderPage={renderMenuItemsOrderPage}
             inOrders={inOrders}
             setInOrders={setInOrders}
+            currSelection={currSelection}
+            setCurrSelection={setCurrSelection}
+            currSearch={currSearch}
+            setCurrSearch={setCurrSearch}
           />
         </Route>
         <Route exact path="/menu">
