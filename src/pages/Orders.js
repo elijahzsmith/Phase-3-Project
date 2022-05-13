@@ -28,7 +28,7 @@ function Orders({
     <div>
       <div className="order">
         <div className="orderLeft">
-          <div className="restaurantInfo">Sinatra's Finest</div>
+          <div className="restaurantInfo"></div>
           <div className="menuOrderItems">
             <Search currSearch={currSearch} setCurrSearch={setCurrSearch} />
             <select
@@ -40,8 +40,6 @@ function Orders({
               <option value="lunch">Lunch</option>
               <option value="dinner">Dinner</option>
               <option value="appetizer">Appetizer</option>
-              <option value="dessert">Dessert</option>
-              <option value="drinks">Drinks</option>
             </select>
             {renderMenuItemsOrderPage}
           </div>

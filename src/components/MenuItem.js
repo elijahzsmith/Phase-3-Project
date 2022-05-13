@@ -34,15 +34,18 @@ function MenuItem({ menuItem, inOrders, setInOrders }) {
       });
   };
   return (
-    <div>
+    <div className="menuOrderContainer">
       <div className="menu-item-card">      
         <div className="title-photo">
           <img src={image_url} alt="food-pic" className="food-pic"></img>
-          <h1>{name}</h1>
+          </div>
+          <div className="menuTitle">
+          <h4>{name}</h4>
         </div>
-        <h2>{course}</h2>
-        <h2>{ingredients}</h2>
-        <h2>Price: ${price}</h2>
+        {/* <h2>{course}</h2> */}
+        {/* <h2>{ingredients}</h2> */}
+        <div>
+        <h4>${price}</h4> </div>
         <Box display="flex" justifyContent="center">
           <Button
             variant="contained"
