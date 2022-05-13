@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReviewForm from "../components/ReviewForm";
 import ReviewItem from "../components/ReviewItem";
 import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 
 function About({ reviews, setReviews }) {
   const [starInput, setStarInput] = useState("");
@@ -88,8 +89,12 @@ function About({ reviews, setReviews }) {
     <div>
       About
       <div className="reviews-container">
-        <h1>Sinatra's Finest</h1>
-        <h4>Include a paragraph about sinatra's finest for content</h4>
+        <div className='about1'>
+          Founded by best friends Elijah Smith, Daniel Conroy, and Elizabeth Treahy,
+        </div>
+        <div className='about2'>
+          Sinatra's is everything you've been looking for.
+        </div>
       </div>
       <ReviewForm
         starInput={starInput}
@@ -98,12 +103,17 @@ function About({ reviews, setReviews }) {
         setReviewInput={setReviewInput}
         reviews={reviews}
         setReviews={setReviews}
-        // handleSubmit={handleSubmit}
+      // handleSubmit={handleSubmit}
       />
       <div className="reviews-container">
+        {/* <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div> */}
+        <h2>Reviews</h2>
         <Grid container style={{ justifyContent: "space-evenly" }}>
-          <h2>Reviews</h2>
-          {renderReviews}
+          {/* <Paper variant="outlined" elevation={12} > */}
+            {renderReviews}
+          {/* </Paper> */}
         </Grid>
       </div>
     </div>

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Paper from '@mui/material/Paper'
+import Rating from '@mui/material/Rating'
 
 function ReviewItem({
   review,
@@ -52,8 +54,10 @@ function ReviewItem({
 
   return (
     <div className="review-item">
+      {/* <Paper> */}
       <h3>{review_details}</h3>
-      <h3>{star_rating}</h3>
+      {/* <h3>{star_rating}</h3> */}
+      <Rating value={star_rating} readOnly />
       <button onClick={() => setDisplayEdit(!displayEdit)}>edit</button>
       <button onClick={() => deleteReview(review)}>delete</button>
       {displayEdit ? (
@@ -75,6 +79,7 @@ function ReviewItem({
           <button onClick={(e) => handleEdit(review, e)}>commit changes</button>
         </form>
       ) : null}
+      {/* </Paper> */}
     </div>
   );
 }
