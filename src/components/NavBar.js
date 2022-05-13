@@ -17,9 +17,9 @@ function NavBar() {
         <div className="homeRestaurantName">SINATRA'S</div>
         <ul className="nav-links">
           <ul className="nav-links">
-            <NavLink exact to="/">
+            {/* <NavLink exact to="/">
               <li className="nav-name">HOME</li>
-            </NavLink>
+            </NavLink> */}
             <NavLink exact to="/menu">
               <li className="nav-name">MENU</li>
             </NavLink>
