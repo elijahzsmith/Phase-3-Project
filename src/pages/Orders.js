@@ -3,7 +3,6 @@ import OrderItem from "../components/OrderItem";
 import Button from "@mui/material/Button";
 import Search from "../components/Search";
 
-
 function Orders({
   inOrders,
   setInOrders,
@@ -13,9 +12,6 @@ function Orders({
   currSearch,
   setCurrSearch,
 }) {
-
-function Orders({ inOrders, setInOrders, renderMenuItemsOrderPage }) {
-
   const renderOrderItems = inOrders.map((order) => {
     console.log(order);
     return (
