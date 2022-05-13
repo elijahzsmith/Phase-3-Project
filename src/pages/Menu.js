@@ -22,31 +22,10 @@ function Menu({
 }) {
   const [menuState, setMenuState] = useState("main menu");
   const [open, setOpen] = React.useState(false);
-  // console.log(afterSelection? afterSelection : null)
-  // const renderMenuItems = afterSearch.map((menuItem) => {
-  // this way let's you filter with drop down but cant do both at once
-  // const renderMenuItems = afterSelection.map((menuItem) => {
-  //   //console.log(menuItem);
-
-  //   return (
-  //     <MenuItem
-  //       key={//menuItem.id}
-  //       menuItem={menuItem}
-  //       afterSelection={afterSelection}
-  //       currSelection={currSelection}
-  //       setCurrSelection={setCurrSelection}
-  //       inOrders={inOrders}
-  //       setInOrders={setInOrders}
-  //     />
-  //   );
-  // });
   const menuChoices = [
-    "main menu",
     "lunch",
     "appetizer",
     "dinner",
-    "dessert",
-    "drinks",
   ];
   const menuButtonCreator = menuChoices.map((choice) => (
     <button
@@ -84,7 +63,12 @@ function Menu({
     const handleClose = () => {
       setOpen(false);
     };
-
+    const filteredMenu = menuItems.length > 0 ? menuItems.filter((x) => menuState === x.course.toLowerCase()).map((y) =>
+      <div>
+        <h2>{y.name} {y.price}</h2>
+        <h3>{y.ingredients}</h3>
+        </div>
+    ) : null;
     return (
       <div>
         <Dialog
@@ -105,8 +89,9 @@ function Menu({
             </div>
             <div className="modalRight">
               <div className="menu-state">{menuState.toUpperCase()}</div>
+              {filteredMenu}
             </div>
-            <div>{renderMenuItems}</div>
+            {/* <div>{renderMenuItems}</div> */}
           </div>
         </Dialog>
       </div>
