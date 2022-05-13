@@ -3,9 +3,6 @@ import OrderItem from "../components/OrderItem";
 import Button from "@mui/material/Button";
 
 function Orders({ inOrders, setInOrders, renderMenuItemsOrderPage }) {
-  console.log(renderMenuItemsOrderPage);
-function Orders({ inOrders, setInOrders, renderMenuItems }) {
-  // console.log(renderMenuItems);
   const renderOrderItems = inOrders.map((order) => {
     console.log(order);
     return (
@@ -35,13 +32,6 @@ function Orders({ inOrders, setInOrders, renderMenuItems }) {
             {renderOrderItems}
           </div>
         </div>
-        {/* <h1>Orders Page</h1> */}
-        {/* {renderOrderItems} */}
-        {/* <h6>tax: $</h6> */}
-        {/* <h6>total: $</h6> */}
-        {/* <Button variant="contained" size="small"> */}
-        {/* Checkout */}
-        {/* </Button> */}
       </div>
     </div>
   );
