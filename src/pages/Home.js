@@ -9,7 +9,7 @@ function Home() {
           <div className='homeHours1'>
             TUESDAY - SATURDAY
           </div>
-          <div className='homeHours2'> 5pm - midnight
+          <div className='homeHours2'> 12pm - midnight
           </div>
           </div>
           <div className='homeBoxLeftPt2'>LOCATION
