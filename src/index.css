@@ -297,3 +297,6 @@ form {
   flex-direction: column;
   color: pink;
 }
+.reviewText {
+  color: pink;
+}

@@ -76,7 +76,7 @@ function ReviewItem({
             // CHANGE VALUES
             value={starEditInput}
           ></input>
-          <button onClick={(e) => handleEdit(review, e)}>commit changes</button>
+          <button onClick={(e) => handleEdit(review, e)}>update</button>
         </form>
       ) : null}
       {/* </Paper> */}

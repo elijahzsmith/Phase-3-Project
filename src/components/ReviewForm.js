@@ -41,7 +41,8 @@ function ReviewForm({
   //console.log(starInput, reviewInput);
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      Leave a review!
+      <div className='reviewText'> Leave a review! </div>
+    
       <input
         type="integer"
         value={starInput}

@@ -111,7 +111,9 @@ function About({ reviews, setReviews }) {
         {/* <div class="column"></div>
         <div class="column"></div>
         <div class="column"></div> */}
+        <div className="reviewText">
         <h2>Reviews</h2>
+        </div>
         <Grid container style={{ justifyContent: "space-evenly" }}>
           {/* <Paper variant="outlined" elevation={12} > */}
             {renderReviews}
